@@ -1,0 +1,4 @@
+com/uasz/alumni/userservice/app/repository/UserRepository.class
+com/uasz/alumni/userservice/app/controller/UsersController.class
+com/uasz/alumni/userservice/app/controller/GlobalExceptionHandler.class
+com/uasz/alumni/userservice/app/UserServiceApplication.class

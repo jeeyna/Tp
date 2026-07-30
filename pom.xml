@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.uasz.alumni</groupId>
+    <artifactId>user-service-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>user-service-parent</name>
+    <description>Alumni Platform - User Service (SPI genere + implementation Spring Boot)</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--
+        Modules :
+          1. user-service-spi  -> interfaces + modeles generes par openapi-generator (generator: spring, interfaceOnly=true)
+          2. user-service-app  -> projet Spring Boot qui depend du SPI et implemente les endpoints
+    -->
+    <modules>
+        <module>user-service-spi</module>
+        <module>user-service-app</module>
+    </modules>
+</project>
