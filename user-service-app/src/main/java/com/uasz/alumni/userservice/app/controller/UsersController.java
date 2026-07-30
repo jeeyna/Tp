@@ -2,7 +2,12 @@ package com.uasz.alumni.userservice.app.controller;
 
 import com.uasz.alumni.userservice.api.UsersApi;
 import com.uasz.alumni.userservice.app.repository.UserRepository;
-import com.uasz.alumni.userservice.model.*;
+import com.uasz.alumni.userservice.model.CreateUserRequest;
+import com.uasz.alumni.userservice.model.UpdateUserRequest;
+import com.uasz.alumni.userservice.model.User;
+import com.uasz.alumni.userservice.model.UserPage;
+import com.uasz.alumni.userservice.model.UserStatus;
+import com.uasz.alumni.userservice.model.UserType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
@@ -119,12 +124,24 @@ public class UsersController implements UsersApi {
     }
 
     private void applyUpdate(User user, UpdateUserRequest request) {
-        if (request.getFirstName() != null) user.setFirstName(request.getFirstName());
-        if (request.getLastName() != null) user.setLastName(request.getLastName());
-        if (request.getPhone() != null) user.setPhone(request.getPhone());
-        if (request.getBiography() != null) user.setBiography(request.getBiography());
-        if (request.getPhotoUrl() != null) user.setPhotoUrl(request.getPhotoUrl());
-        if (request.getAddress() != null) user.setAddress(request.getAddress());
+        if (request.getFirstName() != null) {
+            user.setFirstName(request.getFirstName());
+        }
+        if (request.getLastName() != null) {
+            user.setLastName(request.getLastName());
+        }
+        if (request.getPhone() != null) {
+            user.setPhone(request.getPhone());
+        }
+        if (request.getBiography() != null) {
+            user.setBiography(request.getBiography());
+        }
+        if (request.getPhotoUrl() != null) {
+            user.setPhotoUrl(request.getPhotoUrl());
+        }
+        if (request.getAddress() != null) {
+            user.setAddress(request.getAddress());
+        }
         user.setUpdatedAt(OffsetDateTime.now());
     }
 }
